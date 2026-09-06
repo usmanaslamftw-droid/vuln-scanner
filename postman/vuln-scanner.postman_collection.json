@@ -1,0 +1,155 @@
+{
+  "info": {
+    "name": "vuln-scanner",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Scan Text (Properties)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fileType\": \"PROPERTIES\",\n  \"content\": \"spring-boot.version=3.2.0\\nlombok.version=1.18.28\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/scans/text",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "scans",
+            "text"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Scan Text (Gradle)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fileType\": \"GRADLE\",\n  \"content\": \"dependencies {\\n    implementation 'org.springframework.boot:spring-boot-starter-web:3.2.0'\\n}\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/scans/text",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "scans",
+            "text"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Scan Text (POM)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fileType\": \"POM\",\n  \"content\": \"<dependencies><dependency><groupId>org.projectlombok</groupId><artifactId>lombok</artifactId><version>1.18.28</version></dependency></dependencies>\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/scans/text",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "scans",
+            "text"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Scans",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/scans",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "scans"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Scan By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/scans/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "scans",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Scan Report",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/scans/1/report",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "scans",
+            "1",
+            "report"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8081"
+    }
+  ]
+}
